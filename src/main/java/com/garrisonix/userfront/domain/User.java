@@ -1,73 +1,73 @@
 package com.garrisonix.userfront.domain;
 
 public class User {
-    private Long userId;
-    private String userName;
-    private String userPassword;
-    private String userFirstName;
-    private String userLastName;
-    private String userEmail;
-    private String userPhone;
+    private Long id;
+    private String name;
+    private String password;
+    private String fName;
+    private String lName;
+    private String email;
+    private String phone;
 
     private boolean enabled=true;
 
     private PrimaryAccount primaryAccount;
     private SavingsAccount savingsAccount;
 
-    public Long getUserId() {
-        return userId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUserFirstName() {
-        return userFirstName;
+    public String getfName() {
+        return fName;
     }
 
-    public void setUserFirstName(String userFirstName) {
-        this.userFirstName = userFirstName;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getUserLastName() {
-        return userLastName;
+    public String getlName() {
+        return lName;
     }
 
-    public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
+    public void setlName(String lName) {
+        this.lName = lName;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getUserPhone() {
-        return userPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public boolean isEnabled() {
