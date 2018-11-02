@@ -1,9 +1,14 @@
 package com.garrisonix.userfront.domain;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity
 public class SavingsTransaction {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date date;
     private String description;
@@ -11,13 +16,16 @@ public class SavingsTransaction {
     private String status;
     private Double amount;
     private BigDecimal availableBalance;
-    private PrimaryAccount primaryAccount;
+
+    @ManyToOne
+    @JoinColumn(name = "savings_account_id")
+    private SavingsAccount savingsAccount;
 
     public SavingsTransaction() {
     }
 
     public SavingsTransaction(Long id, Date date, String description, String type, String status, Double amount,
-                              BigDecimal availableBalance, PrimaryAccount primaryAccount) {
+                              BigDecimal availableBalance, SavingsAccount savingsAccount) {
         this.id = id;
         this.date = date;
         this.description = description;
@@ -25,7 +33,7 @@ public class SavingsTransaction {
         this.status = status;
         this.amount = amount;
         this.availableBalance = availableBalance;
-        this.primaryAccount = primaryAccount;
+        this.savingsAccount = savingsAccount;
     }
 
     public Long getId() {
@@ -84,12 +92,12 @@ public class SavingsTransaction {
         this.availableBalance = availableBalance;
     }
 
-    public PrimaryAccount getPrimaryAccount() {
-        return primaryAccount;
+    public SavingsAccount getSavingsAccount() {
+        return savingsAccount;
     }
 
-    public void setPrimaryAccount(PrimaryAccount primaryAccount) {
-        this.primaryAccount = primaryAccount;
+    public void setSavingsAccount(SavingsAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
     }
 }
 

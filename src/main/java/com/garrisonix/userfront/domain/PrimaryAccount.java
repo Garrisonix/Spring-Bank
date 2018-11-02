@@ -1,13 +1,22 @@
 package com.garrisonix.userfront.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.math.BigDecimal;
 import java.util.List;
+import javax.persistence.*;
 
+
+@Entity
 public class PrimaryAccount {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long accountId;
     private int accountNumber;
     private BigDecimal accountBalance;
 
+    @OneToMany(mappedBy = "primaryAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<PrimaryTransaction> primaryTransactionList;
 
     public Long getAccountId() {
