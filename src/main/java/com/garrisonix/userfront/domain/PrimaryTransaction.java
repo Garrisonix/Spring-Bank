@@ -6,6 +6,7 @@ import java.util.Date;
 
 @Entity
 public class PrimaryTransaction {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -15,12 +16,12 @@ public class PrimaryTransaction {
     private String status;
     private Double amount;
     private BigDecimal availableBalance;
+
     @ManyToOne
     @JoinColumn(name = "primary_account_id")
     private PrimaryAccount primaryAccount;
 
     public PrimaryTransaction(){
-
     }
 
     public PrimaryTransaction(Long id, Date date, String description, String type, String status, Double amount,

@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "userId", nullable = false, updatable = false)
